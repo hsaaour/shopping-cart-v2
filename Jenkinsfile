@@ -16,7 +16,7 @@ pipeline {
                     }
                 }
                 stage('Integration tests') {
-                    when { expression { params.RUN_INTEGRATION_TESTS } }
+                    when { expression { return params.RUN_INTEGRATION_TESTS } }
                     steps {
                         sh './mvnw test -D testGroups=integration'
                     }
